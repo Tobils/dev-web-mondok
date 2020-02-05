@@ -73,6 +73,7 @@ aplikasi untuk authentifikasi login form menggunakan Json Web Token
 - `USE login_jwt;`
 - `CREATE TABLE table_user ( id smallint unsigned not null auto_increment, name varchar(20) not null, password varchar(20) not null, constraint pk_example primary key (id) );`
 - `INSERT INTO table_user ( id, name, password) VALUES ( null, 'tobil', '123acbd' );`
+- `INSERT INTO table_user ( id, name, password) VALUES ( null, 'tiyas', '234manokwari' );`
 ---
 ## session, cookies dan token management
 - ketika logout, set cookies expired now. sehingga sessio token jwt harus sama dengan session cookie.
@@ -112,7 +113,9 @@ Gambar 1.2 halaman login
 Gambar 1.2 halaman admin
 </p>
 
-
+--
+## PostgreSQL
+- [link](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
 
 
 ---
@@ -126,4 +129,5 @@ Gambar 1.2 halaman admin
 - [jwt ref #5](https://tutorialedge.net/nodejs/nodejs-jwt-authentication-tutorial/)
 - [codepen admin page](https://codepen.io/buyubaya/pen/LjezyJ)
 - [codepen login page](https://codepen.io/tomasvn/pen/GqXEOg)
-- [generate private key dan public key]()
+- [generate private key dan public key](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9#gistcomment-2932501)
+- [jQuery table](https://mdbootstrap.com/plugins/jquery/table-editor/)

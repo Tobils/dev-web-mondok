@@ -9,6 +9,11 @@ router.get('/admin-pages/data', auth.isTokenAuthorized, controller.getData);
 router.get('/admin-pages/edit', auth.isTokenAuthorized, controller.getEdit);
 router.get('/admin-pages/support', auth.isTokenAuthorized, controller.getSupport);
 router.get('/logout', auth.isLogOut, controller.getLogOut)
-
+router.get('/table', (req, res, next) => {
+    res.render('table');
+});
+router.get('/table2', (req, res, next) => {
+    res.render('table2');
+});
 
 module.exports = router;
