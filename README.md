@@ -131,3 +131,4 @@ Gambar 1.2 halaman admin
 - [codepen login page](https://codepen.io/tomasvn/pen/GqXEOg)
 - [generate private key dan public key](https://gist.github.com/ygotthilf/baa58da5c3dd1f69fae9#gistcomment-2932501)
 - [jQuery table](https://mdbootstrap.com/plugins/jquery/table-editor/)
+- [Dynamic table](http://talkerscode.com/webtricks/add-edit-and-delete-rows-from-table-dynamically-using-javascript.php)
