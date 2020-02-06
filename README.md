@@ -119,6 +119,11 @@ Gambar 1.2 halaman admin
 
 
 ---
+## UI/UX
+    - edit table feature
+    - register feature
+
+---
 ## Referensi
 - [stackoverflow : cookie](https://stackoverflow.com/questions/27978868/destroy-cookie-nodejs)
 - [stackoverflow : variable undefined](https://www.tutorialrepublic.com/faq/how-to-determine-if-variable-is-undefined-or-null-in-javascript.php)
