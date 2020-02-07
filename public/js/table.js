@@ -122,17 +122,60 @@ function delete_row(no) {
 
 
 function tambah_baris() {
-    var table_input = document.getElementById("input_table");
-    var len_table_input = (table_input.rows.length) - 1;
-    if (len_table_input < 2) {
+    var data_table = document.getElementById("data_table");
+    var elem = document.getElementById("add_button");
+
+    /**
+     * jika value button == Tambah, buat table tambah
+     * jika button selesai, hide div input
+     */
+    var input = document.getElementById("input");
+
+    if (elem.value == "Tambah") {
+        /**
+         * display block
+         */
+        input.style.display = "block";
 
         /**
-         * create element
-         * <td><input id=""></input></td>
+         * create element 
+         * <table align='center' cellspacing=2 cellpadding=5 id="input_table" border=1>
+         *      <tr id="row">
+         *          <td></td>
+         *           ...
+         *          <td></td>
+         *      </tr>
+         * </table>
          */
+
+        // len table exist
         var table = document.getElementById("data_table");
         var table_len = (table.rows.length) - 1;
 
+        // <table align='center' cellspacing=2 cellpadding=5 id="input_table" border=1>
+        var table_input = document.createElement('table');
+        table_input.align = "center";
+        table_input.cellspacing = 2;
+        table_input.cellpadding = 5;
+        table_input.id = "input_table";
+        table_input.border = 1;
+
+        // <tr id="row">
+        var new_row = document.createElement('tr');
+        new_row.id = "row" + table_len;
+
+        // <td>
+        var td_new_pic = document.createElement('td');
+        var td_new_no_odner = document.createElement('td');
+        var td_new_nama_dokumen = document.createElement('td');
+        var td_new_no_dokumen = document.createElement('td');
+        var td_new_nama_laporan = document.createElement('td');
+        var td_new_halaman = document.createElement('td');
+        var td_new_tahun = document.createElement('td');
+        var td_new_keterangan = document.createElement('td');
+        var td_btn = document.createElement('td');
+
+        // <input id="id"+table_len>
         var new_pic = document.createElement('input');
         var new_no_odner = document.createElement("input");
         var new_nama_dokumen = document.createElement("input");
@@ -151,24 +194,6 @@ function tambah_baris() {
         new_tahun.id = "new_tahun" + table_len;
         new_keterangan.id = "new_keterangan" + table_len;
 
-        var td_new_pic = document.createElement('td');
-        var td_new_no_odner = document.createElement('td');
-        var td_new_nama_dokumen = document.createElement('td');
-        var td_new_no_dokumen = document.createElement('td');
-        var td_new_nama_laporan = document.createElement('td');
-        var td_new_halaman = document.createElement('td');
-        var td_new_tahun = document.createElement('td');
-        var td_new_keterangan = document.createElement('td');
-
-        td_new_pic.appendChild(new_pic);
-        td_new_no_odner.appendChild(new_no_odner);
-        td_new_nama_dokumen.appendChild(new_nama_dokumen);
-        td_new_no_dokumen.appendChild(new_no_dokumen);
-        td_new_nama_laporan.appendChild(new_nama_laporan);
-        td_new_halaman.appendChild(new_halaman);
-        td_new_tahun.appendChild(new_tahun);
-        td_new_keterangan.appendChild(new_keterangan);
-
 
         /**
          * create button 
@@ -177,9 +202,6 @@ function tambah_baris() {
          * <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
          * </td>
          */
-
-
-        var td_btn = document.createElement('td');
 
         /**
          * create button save
@@ -194,21 +216,27 @@ function tambah_baris() {
         };
 
         /**
-         * create button delete 
+         * append child input to td
+         * <td>
+         *      <input id="">
+         *      </input>
+         * <td>
          */
-        var btn_delete = document.createElement('input');
-        btn_delete.type = "button";
-        btn_delete.value = "Delete";
-        btn_delete.className = "delete";
-        btn_delete.onclick = function() {
-            delete_row(table_len);
-        };
-
+        td_new_pic.appendChild(new_pic);
+        td_new_no_odner.appendChild(new_no_odner);
+        td_new_nama_dokumen.appendChild(new_nama_dokumen);
+        td_new_no_dokumen.appendChild(new_no_dokumen);
+        td_new_nama_laporan.appendChild(new_nama_laporan);
+        td_new_halaman.appendChild(new_halaman);
+        td_new_tahun.appendChild(new_tahun);
+        td_new_keterangan.appendChild(new_keterangan);
         td_btn.appendChild(btn_save);
-        td_btn.appendChild(btn_delete);
 
         /**
-         * create tr
+         * append child td to tr
+         * <tr id="row">
+         * <td>...</td>
+         * </tr>
          */
         var new_row = document.createElement('tr');
         new_row.id = "row" + table_len;
@@ -224,11 +252,30 @@ function tambah_baris() {
 
 
         /**
-         * DOM to HTML Page
+         * append child tr to table
+         * <table>
+         * <tr>...</tr>
+         * </table>
          */
-        var parent = document.getElementById("input_table");
-        parent.appendChild(new_row);
+        /**
+         * duplicate header
+         */
+        var header_table = data_table.cloneNode(true);
+        header_table.id = "input_table";
+        header_table.appendChild(new_row);
+        input.appendChild(header_table);
+
+
+
+        elem.value = "Selesai";
+        /**
+         * hapus penambahan child header
+         */
+        input.removeChild(input.childNodes[0]);
+
+    } else {
+        elem.value = "Tambah";
+        input.style.display = "none";
+
     }
-
-
 }

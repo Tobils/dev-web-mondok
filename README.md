@@ -120,8 +120,8 @@ Gambar 1.2 halaman admin
 
 ---
 ## UI/UX
-    - edit table feature
-    - register feature
+    - edit table feature 
+    - register feature [done]
 
 ---
 ## Referensi
