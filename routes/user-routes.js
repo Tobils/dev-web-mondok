@@ -12,8 +12,14 @@ router.get('/logout', auth.isLogOut, controller.getLogOut)
 router.get('/table', (req, res, next) => {
     res.render('table');
 });
-router.get('/table2', (req, res, next) => {
-    res.render('table2');
+router.post('/api/data-baru', (req, res, next) => {
+    var pic = req.pic;
+    console.log(pic);
+    res.render('admin-pages-edit', {
+        pageTitle: "Edit",
+        userName: "suhada",
+        hover: true
+    });
 });
 
 module.exports = router;

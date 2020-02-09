@@ -1,0 +1,117 @@
+<%- include('./includes/admin-pages-header.ejs') %>
+
+    <!-- CONTAINER  -->
+    <div class="mainContent">
+        <!-- DETAIL FORM -->
+        <form action="" method="POST" enctype="multipart/form-data" class="form">
+            <!-- header form  -->
+            <div class="formHeader row">
+                <h2 class="text-1 fl">Tambah Data Dokumen</h2>
+                <div class="fr">
+                    <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>
+                    <a href="" class="btnAdd fa fa-plus bg-1 text-fff"></a>
+                </div>
+            </div>
+
+            <div class="table">
+                <!-- table header  -->
+                <div class="row bg-1">
+                    <div class="cell cell-30 text-center text-fff">PIC</div>
+                    <div class="cell cell-100 text-center text-fff">No Odner</div>
+                    <div class="cell cell-150 text-center text-fff">Nama Dokumen</div>
+                    <div class="cell cell-150 text-center text-fff">No Dokumen</div>
+                    <div class="cell cell-150 text-center text-fff">Nama Laporan</div>
+                    <div class="cell cell-150 text-right text-fff">Halaman</div>
+                    <div class="cell cell-100 text-right text-fff">Tahun</div>
+                    <div class="cell cell-100p text-right text-fff">Keterangan</div>
+                </div>
+
+                <ul>
+                    <li class="row">
+                        <div class="cell cell-30 text-center"> <label class="inputGroup">
+                            <span><input type="text" name="name"></span>
+                        </label></div>
+                        <div class="cell cell-100 text-center">A-4-1</div>
+                        <div class="cell cell-150 text-center">IDENTIKASI HCV/NKT</div>
+                        <div class="cell cell-150 text-center">MSL/ENV/1.1/2.1</div>
+                        <div class="cell cell-150 text-center">LAPORAN FLORA FAUNA</div>
+                        <div class="cell cell-150 text-center">1</div>
+                        <div class="cell cell-100 text-left">2019</div>
+                        <div class="cell cell-100 text-center">-</div>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="formBody row">
+                <div class="column s-6">
+                    <label class="inputGroup">
+                        <span>Name</span>
+                        <span><input type="text" name="name"></span>
+                    </label>
+                    <label class="inputGroup">
+                        <span>Code</span>
+                        <span><input type="text" name="code"></span>
+                    </label>
+                    <label class="inputGroup">
+                        <span>Price</span>
+                        <span><input type="text" name="price"></span>
+                    </label>
+                    <label class="inputGroup">
+                        <span>Note</span>
+                        <span><input type="text" name="note"></span>
+                    </label>
+                </div>
+
+                <div class="column">
+                    <label class="inputGroup">
+                      <span>Description</span>
+                      <textarea name="description"></textarea>
+                  </label>
+                </div>
+            </div>
+        </form>
+
+        <!-- control page  -->
+        <div id="pagination">
+            <ul class="pagination list-inline text-center">
+                <li><a href="?page=1">1</a></li>
+                <li class="is-active"><a href="?page=2">2</a></li>
+                <li><a href="?page=3">3</a></li>
+                <li><a href="?page=4">4</a></li>
+                <li><a href="?page=5">5</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <!-- END CONTAINER  -->
+
+    <%- include('./includes/admin-pages-footer.ejs') %>
+
+
+
+
+        <th>
+            <div class="cell cell-150 text-center text-fff">No Dokumen</div>
+        </th>
+        <th>
+            <div class="cell cell-150 text-center text-fff">Nama Laporan</div>
+        </th>
+        <th>
+            <div class="cell cell-150 text-right text-fff">Halaman</div>
+        </th>
+        <th>
+            <div class="cell cell-100 text-right text-fff">Tahun</div>
+        </th>
+        <th>
+            <div class="cell cell-100p text-right text-fff">Keterangan</div>
+        </th>
+
+        <div class="cell cell-50 text-center"><input type="text" name="name" size="8"></div>
+        <div class="cell cell-150 text-center">IDENTIKASI HCV/NKT</div>
+        <div class="cell cell-150 text-center">MSL/ENV/1.1/2.1</div>
+        <div class="cell cell-150 text-center">LAPORAN FLORA FAUNA</div>
+        <div class="cell cell-150 text-center">1</div>
+        <div class="cell cell-100 text-left">2019</div>
+        <div class="cell cell-100 text-center">-</div>

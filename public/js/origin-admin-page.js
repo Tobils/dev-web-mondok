@@ -277,3 +277,9 @@ function extend2(o1, o = []) {
     }
     return result;
 }
+
+
+
+
+
+// console.log(findClosest(elm("#test"),elm("ul")));
