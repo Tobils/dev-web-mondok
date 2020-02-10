@@ -123,6 +123,30 @@ Gambar 1.2 halaman admin
     - register feature [done]
 
 ---
+## Database
+- membuat database
+    - `create database mondok;`
+- membuat table_user
+    - `USE mondok;`
+    - `CREATE TABLE table_user ( id smallint unsigned not null auto_increment, name varchar(20) not null, password varchar(20) not null, constraint pk_example primary key (id) );`
+    - `INSERT INTO table_user ( id, name, password) VALUES ( null, 'tobil', '123acbd' );`
+    - `INSERT INTO table_user ( id, name, password) VALUES ( null, 'tiyas', '234manokwari' );`
+- membuat table_data_dokumen
+    - `USE mondok;`
+    - `CREATE TABLE table_data_dokumen ( id smallint unsigned not null auto_increment, pic varchar(20), no_odner varchar(20), nama_dokumen varchar(100), no_dokumen varchar(20), nama_laporan varchar(100), halaman INT UNSIGNED, tahun YEAR(4), keterangan varchar(200),  constraint pk_example primary key (id) );`
+
+---
+## Wajib diisi
+- konsep
+    ```
+    tidak boleh ada form isian yang kosong, dapat dilakukan dengan menambahkan required mark, sehingga form tidak dapat di submit sebelum terisi dengan lengkap.
+    ```
+    ```html
+     <input type="text" required pattern=".*\S+.*" title="This field is required" name="pic" placeholder="PIC" />
+    ```
+- [link]
+
+---
 ## Referensi
 - [stackoverflow : cookie](https://stackoverflow.com/questions/27978868/destroy-cookie-nodejs)
 - [stackoverflow : variable undefined](https://www.tutorialrepublic.com/faq/how-to-determine-if-variable-is-undefined-or-null-in-javascript.php)

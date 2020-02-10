@@ -1,66 +1,78 @@
 <%- include('./includes/admin-pages-header.ejs') %>
 
     <!-- CONTAINER  -->
-    <div class="mainContent">
-        <!-- LIST FORM -->
-        <div class="row filterGroup">
-            <!-- foram search document  -->
-            <form action="" method="POST" class="formSearch fl">
-                <input type="text" class="inputSearch" placeholder="Search">
-                <button type="submit" class="btnSearch"><i class="fa fa-search"></i></button>
-            </form>
+    <div class="mainContent" style="overflow-x:auto;">
+        <!-- header  -->
+
+        <div class="table">
+            <div class="row bg-1">
+                <div class="cell cell-100 text-center text-fff">
+                    <h2>Data Detail</h2>
+                </div>
+            </div>
         </div>
 
-        <form action="" method="GET" name="listForm" class="form scrollX">
-            <div class="formHeader row">
-                <h2 class="text-1 fl">Document List</h2>
+        <section>
+            <div class="tbl-header" style="overflow-x:auto;">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>PIC</th>
+                            <th>No Odner</th>
+                            <th>Nama Dokumen</th>
+                            <th>No Dokumen </th>
+                            <th>Nama Laporan</th>
+                            <th>Halaman</th>
+                            <th>Tahun</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
-            <div class="table">
-                <!-- table header  -->
-                <div class="row bg-1">
-                    <div class="cell cell-10 text-center text-fff">ID</div>
-                    <div class="cell cell-30 text-center text-fff">PIC</div>
-                    <div class="cell cell-100 text-center text-fff">No Odner</div>
-                    <div class="cell cell-150 text-center text-fff">Nama Dokumen</div>
-                    <div class="cell cell-150 text-center text-fff">No Dokumen</div>
-                    <div class="cell cell-150 text-center text-fff">Nama Laporan</div>
-                    <div class="cell cell-150 text-right text-fff">Halaman</div>
-                    <div class="cell cell-100 text-right text-fff">Tahun</div>
-                    <div class="cell cell-100p text-right text-fff">Keterangan</div>
+            <div class="tbl-content" style="overflow-x:auto;">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>SHE</td>
+                            <td>A41</td>
+                            <td>IDENTIKASI HCV/NKT</td>
+                            <td>MSL/ENV/1.1/2.1</td>
+                            <td>SOSIALISASI MENGENAI PELESTARIAN HEWAN DAN TANAMAN LANGKA KEPADA PETANI PLASMA DAN MASYARAKAT</td>
+                            <td>33</td>
+                            <td>2019</td>
+                            <td>oke</td>
+                        </tr>
 
-                </div>
-                <!-- table value  BEGIN LOOP -->
-                <ul>
-                    <li class="row">
-                        <div class="cell cell-10 text-center">1</div>
-                        <div class="cell cell-30 text-center">SHE</div>
-                        <div class="cell cell-100 text-center">A-4-1</div>
-                        <div class="cell cell-150 text-center">IDENTIKASI HCV/NKT</div>
-                        <div class="cell cell-150 text-center">MSL/ENV/1.1/2.1</div>
-                        <div class="cell cell-150 text-center">LAPORAN FLORA FAUNA</div>
-                        <div class="cell cell-150 text-center">1</div>
-                        <div class="cell cell-100 text-left">2019</div>
-                        <div class="cell cell-100 text-center">-</div>
-                    </li>
-                    <li class="row">
-                        <div class="cell cell-10 text-center">2</div>
-                        <div class="cell cell-30 text-center">SHE</div>
-                        <div class="cell cell-100 text-center">A-4-1</div>
-                        <div class="cell cell-150 text-center">IDENTIKASI HCV/NKT</div>
-                        <div class="cell cell-150 text-center">MSL/ENV/1.1/2.1</div>
-                        <div class="cell cell-150 text-center">SOSIALISASI MENGENAI PELESTARIAN HEWAN DAN TANAMAN LANGKA KEPADA PETANI PLASMA DAN MASYARAKAT</div>
-                        <div class="cell cell-150 text-center">32</div>
-                        <div class="cell cell-100 text-left">2014</div>
-                        <div class="cell cell-100 text-center">RUMAH KADES MUARATOYU (BAPAK MARYANTO BUYUNG)</div>
-                    </li>
-                </ul>
-                <!--   END LOOP -->
+                    </tbody>
+                </table>
             </div>
-        </form>
+        </section>
 
-        <!-- perulangan sesuai jumlah data  -->
-        <!-- setiap page menampilkan 20 data  -->
-        <div id="pagination">
+    </div>
+
+    <!-- show data  with table-->
+
+
+
+    <!-- follow me template -->
+    <!-- <div class="made-with-love">
+            Made with
+            <i>♥</i> by
+            <a target="_blank" href="https://codepen.io/nikhil8krishnan">Nikhil Krishnan</a>
+        </div> -->
+
+
+    </div>
+    </div>
+    <!-- END CONTAINER  -->
+
+    <%- include('./includes/admin-pages-footer.ejs') %>
+
+        <!-- 
+
+                    <div id="pagination">
             <ul class="pagination list-inline text-center">
                 <li class="is-active"><a href="?page=1">1</a></li>
                 <li><a href="?page=2">2</a></li>
@@ -69,8 +81,94 @@
                 <li><a href="?page=5">5</a></li>
             </ul>
         </div>
-    </div>
-    </div>
-    <!-- END CONTAINER  -->
 
-    <%- include('./includes/admin-pages-footer.ejs') %>
+        
+
+    <form action="" method="GET" name="listForm" class="form scrollX">
+        <div class="formHeader row">
+            <h2 class="text-1 fl">Document List</h2>
+        </div>
+        <div class="table">
+
+            <div class="row bg-1">
+                <div class="cell cell-10 text-center text-fff">ID</div>
+                <div class="cell cell-30 text-center text-fff">PIC</div>
+                <div class="cell cell-100 text-center text-fff">No Odner</div>
+                <div class="cell cell-150 text-center text-fff">Nama Dokumen</div>
+                <div class="cell cell-150 text-center text-fff">No Dokumen</div>
+                <div class="cell cell-150 text-center text-fff">Nama Laporan</div>
+                <div class="cell cell-150 text-right text-fff">Halaman</div>
+                <div class="cell cell-100 text-right text-fff">Tahun</div>
+                <div class="cell cell-100p text-right text-fff">Keterangan</div>
+
+            </div>
+
+            <ul>
+                <li class="row">
+                    <div class="cell cell-10 text-center">1</div>
+                    <div class="cell cell-30 text-center">SHE</div>
+                    <div class="cell cell-100 text-center">A-4-1</div>
+                    <div class="cell cell-150 text-center">IDENTIKASI HCV/NKT</div>
+                    <div class="cell cell-150 text-center">MSL/ENV/1.1/2.1</div>
+                    <div class="cell cell-150 text-center">LAPORAN FLORA FAUNA</div>
+                    <div class="cell cell-150 text-center">1</div>
+                    <div class="cell cell-100 text-left">2019</div>
+                    <div class="cell cell-100 text-center">-</div>
+                </li>
+                <li class="row">
+                    <div class="cell cell-10 text-center">2</div>
+                    <div class="cell cell-30 text-center">SHE</div>
+                    <div class="cell cell-100 text-center">A-4-1</div>
+                    <div class="cell cell-150 text-center">IDENTIKASI HCV/NKT</div>
+                    <div class="cell cell-150 text-center">MSL/ENV/1.1/2.1</div>
+                    <div class="cell cell-150 text-center">SOSIALISASI MENGENAI PELESTARIAN HEWAN DAN TANAMAN LANGKA KEPADA PETANI PLASMA DAN MASYARAKAT</div>
+                    <div class="cell cell-150 text-center">32</div>
+                    <div class="cell cell-100 text-left">2014</div>
+                    <div class="cell cell-100 text-center">RUMAH KADES MUARATOYU (BAPAK MARYANTO BUYUNG)</div>
+                </li>
+            </ul>
+          
+        </div>
+    </form> -->
+
+        <!-- 
+<section>
+                <div class="tbl-header" style="overflow-x:auto;">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>PIC</th>
+                                <th>No Odner</th>
+                                <th>Nama Dokumen</th>
+                                <th>No Dokumen </th>
+                                <th>Nama Laporan</th>
+                                <th>Halaman</th>
+                                <th>Tahun</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tbl-content" style="overflow-x:auto;">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>SHE</td>
+                                <td>A41</td>
+                                <td>IDENTIKASI HCV/NKT</td>
+                                <td>MSL/ENV/1.1/2.1</td>
+                                <td>SOSIALISASI MENGENAI PELESTARIAN HEWAN DAN TANAMAN LANGKA KEPADA PETANI PLASMA DAN MASYARAKAT</td>
+                                <td>33</td>
+                                <td>2019</td>
+                                <td>oke</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+     -->

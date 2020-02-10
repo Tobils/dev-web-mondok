@@ -2,132 +2,46 @@
 
     <!-- CONTAINER  -->
     <div class="mainContent">
+        <div class="table">
+            <div class="row bg-1">
+                <div class="cell cell-100 text-center text-fff">
+                    <h2>Data Detail</h2>
+                </div>
+            </div>
+        </div>
         <!-- DETAIL FORM -->
-        <form action="/api/data-baru" method="POST" enctype="multipart/form-data" class="form">
-            <!-- header form  -->
-            <div class="formHeader row">
-                <h2 class="text-1 fl">Tambah Data Dokumen</h2>
-                <div class="fr">
-                    <button type="submit" class="btnSave bg-1 text-fff text-bold fr">SAVE</button>
-                    <!-- <a href="" class="btnAdd fa fa-plus bg-1 text-fff"></a> -->
-                </div>
+        <!-- <form action="/api/data-baru" method="POST" enctype="multipart/form-data" class="form"> -->
+        <form action="/api/data-baru" method="POST" class="table" name="add-data-form">
+            <!-- fieldsets -->
+            <div id="msform">
+                <fieldset>
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="pic" placeholder="PIC" />
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="no_odner" placeholder="No Odner" />
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="nama_dokumen" placeholder="Nama Dokumen" />
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="no_dokumen" placeholder="No Dokumen" />
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="nama_laporan" placeholder="Nama Laporan" />
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="halaman" placeholder="Halaman" />
+                    <input type="text" required pattern=".*\S+.*" title="This field is required" name="tahun" placeholder="Tahun" />
+                    <input type="text" name="keterangan" placeholder="Keterangan" />
+                    <input type="submit" name="submit" class="submit action-button" value="Simpan" />
+                </fieldset>
             </div>
 
-            <!-- table pertama  -->
-            <div class="table">
-                <!-- table header  -->
-                <div class="row bg-1">
-                    <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=0>
-                        <tr id="data_table_header">
-                            <th>
-                                <div class="cell cell-200 text-center text-fff">PIC</div>
-                            </th>
-                            <th>
-                                <div class="cell cell-200 text-center text-fff">No Odner</div>
-                            </th>
-                            <th>
-                                <div class="cell cell-200 text-center text-fff">Nama Dokumen</div>
-                            </th>
-                            <th>
-                                <div class="cell cell-200 text-center text-fff">No Dokumen</div>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-
-                <ul>
-                    <li class="row">
-                        <div class="cell cell-200 text-center text-fff">
-                            <select id="pic" name="pic">
-                                <option value="SHE">SHE</option>
-                                <option value="saab">Saab</option>
-                                <option value="opel">Opel</option>
-                                <option value="audi">Audi</option>
-                              </select>
-                        </div>
-                        <th>
-                            <div class="cell cell-200 text-center text-fff"><input type="text" name="no odner" placeholder="No Odner"></div>
-                        </th>
-                        <th>
-                            <div class="cell cell-200 text-center text-fff"><input type="text" name="nama dokumen" placeholder="Nama Dokumen"></div>
-                        </th>
-                        <th>
-                            <div class="cell cell-200 text-center text-fff"><input type="text" name="no dokumen" placeholder="No Dokumen"></div>
-                        </th>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- table kedua  -->
-            <div class="table">
-                <!-- table header  -->
-                <div class="row bg-1">
-                    <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=0>
-                        <tr id="data_table_header">
-                            <th>
-                                <div class="cell cell-150 text-center text-fff"></div>
-                            </th>
-                            <th>
-                                <div class="cell cell-200 text-center text-fff">Nama Laporan</div>
-                            </th>
-                            <th>
-                                <div class="cell cell-200 text-center text-fff">Halaman</div>
-                            </th>
-                            <th>
-                                <div class="cell cell-150 text-center text-fff">Tahun</div>
-                            </th>
-                        </tr>
-                    </table>
-                </div>
-
-                <ul>
-                    <li class="row">
-                        <th>
-                            <div class="cell cell-200 text-center text-fff"></div>
-                        </th>
-                        <th>
-                            <div class="cell cell-100 text-center text-fff"><input type="text" name="nama laporan" placeholder="Nama Laporan"></div>
-                        </th>
-                        <th>
-                            <div class="cell cell-150 text-center text-fff"><select id="halaman" name="halaman"></select></div>
-                            <script>
-                                var start = 1;
-                                var end = 1000;
-                                var options = "";
-                                for (var year = start; year <= end; year++) {
-                                    options += "<option>" + year + "</option>";
-                                }
-                                document.getElementById("halaman").innerHTML = options;
-                            </script>
-                        </th>
-                        <th>
-                            <div class="cell cell-200 text-center text-fff"><select id="year" name="tahun"></select></div>
-                            <script>
-                                var start = 1900;
-                                var end = new Date().getFullYear();
-                                var options = "";
-                                for (var year = start; year <= end; year++) {
-                                    options += "<option>" + year + "</option>";
-                                }
-                                document.getElementById("year").innerHTML = options;
-                            </script>
-                        </th>
-                    </li>
-                </ul>
-            </div>
-
-
-            <div class="formBody row">
-                <div class="column">
-                    <label class="inputGroup">
-                      <span>Keterangan</span>
-                      <textarea name="description"></textarea>
-                  </label>
-                </div>
-            </div>
         </form>
     </div>
     </div>
     <!-- END CONTAINER  -->
 
     <%- include('./includes/admin-pages-footer.ejs') %>
+
+        <!-- 
+    data yang akan di submit meilputi
+1. PIC
+2. No Odner	
+3. Nama Dokumen	
+4. No Dokumen	
+5. Nama Laporan	
+6. Halaman	
+7. Tahun	
+8. Keterangan 
+-->

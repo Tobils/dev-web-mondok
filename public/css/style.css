@@ -945,6 +945,11 @@ li.nav-link-is-active a {
 }
 
 .mainContent {
+    /* background: #4CAFAF; */
+    /* background: -webkit-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -moz-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -o-linear-gradient(right, #4CAFAF, #205FA0);
+    background: linear-gradient(to left, #4CAFAF, #205FA0); */
     padding: 20px;
 }
 
@@ -1328,4 +1333,172 @@ li.nav-link-is-active a {
 .noUi-handle:before,
 .noUi-handle:after {
     display: none;
+}
+
+
+/* untuk form  */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*form styles*/
+
+#msform {
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+
+/*Hide all except first fieldset*/
+
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+
+/*inputs*/
+
+#msform input,
+#msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+
+/*buttons*/
+
+#msform .action-button {
+    width: 100px;
+    background: #205FA0;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+
+/* table data  */
+
+h1 {
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    /* table-layout: fixed; */
+    table-layout: auto;
+}
+
+.tbl-header {
+    overflow: auto;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    background: #4CAFAF;
+    background: -webkit-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -moz-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -o-linear-gradient(right, #4CAFAF, #205FA0);
+    background: linear-gradient(to left, #4CAFAF, #205FA0);
+}
+
+.tbl-content {
+    overflow: auto;
+    background: #4CAFAF;
+    background: -webkit-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -moz-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -o-linear-gradient(right, #4CAFAF, #205FA0);
+    background: linear-gradient(to left, #4CAFAF, #205FA0);
+    height: 300px;
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 12px;
+    color: #fff;
+    /* border-bottom: solid 1px rgba(255, 255, 255, 0.1); */
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+/* body {
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    font-family: 'Roboto', sans-serif;
+} */
+
+section {
+    margin: 50px;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+ ::-webkit-scrollbar {
+    width: 6px;
+}
+
+ ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+ ::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.mainData {
+    background: #4CAFAF;
+    background: -webkit-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -moz-linear-gradient(right, #4CAFAF, #205FA0);
+    background: -o-linear-gradient(right, #4CAFAF, #205FA0);
+    background: linear-gradient(to left, #4CAFAF, #205FA0);
 }

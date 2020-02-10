@@ -277,3 +277,12 @@ function extend2(o1, o = []) {
     }
     return result;
 }
+
+function simpan() {
+    if (!confirm("Do you really want to do this?")) {
+        return false;
+    } else {
+        this.form.submit();
+    }
+
+}
