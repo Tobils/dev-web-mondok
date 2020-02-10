@@ -136,7 +136,7 @@ Gambar 1.2 halaman admin
     - `CREATE TABLE table_data_dokumen ( id smallint unsigned not null auto_increment, pic varchar(20), no_odner varchar(20), nama_dokumen varchar(100), no_dokumen varchar(20), nama_laporan varchar(100), halaman INT UNSIGNED, tahun YEAR(4), keterangan varchar(200),  constraint pk_example primary key (id) );`
 
 ---
-## Wajib diisi
+## Form Wajib diisi
 - konsep
     ```
     tidak boleh ada form isian yang kosong, dapat dilakukan dengan menambahkan required mark, sehingga form tidak dapat di submit sebelum terisi dengan lengkap.
@@ -144,7 +144,8 @@ Gambar 1.2 halaman admin
     ```html
      <input type="text" required pattern=".*\S+.*" title="This field is required" name="pic" placeholder="PIC" />
     ```
-- [link]
+## Responsif Table
+
 
 ---
 ## Referensi

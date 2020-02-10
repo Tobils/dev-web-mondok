@@ -23,7 +23,3 @@ module.exports.dbAuth = function(username, password, cb) {
         })
         // next();
 }
-
-module.exports.isTokenAuthorized = function(req, res, next) {
-
-}

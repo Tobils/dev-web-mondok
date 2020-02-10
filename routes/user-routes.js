@@ -6,7 +6,7 @@ const data_controller = require('../controller/data-controller');
 
 router.get('/', controller.getLogin);
 router.post('/login', auth.isUserAuthorized, controller.postLogin);
-router.get('/admin-pages/data', auth.isTokenAuthorized, controller.getData);
+router.get('/admin-pages/data', auth.isTokenAuthorized, data_controller.getData);
 router.get('/admin-pages/edit', auth.isTokenAuthorized, controller.getEdit);
 router.get('/admin-pages/support', auth.isTokenAuthorized, controller.getSupport);
 router.post('/api/data-baru', auth.isTokenAuthorized, data_controller.postData);

@@ -1154,7 +1154,6 @@ li.nav-link-is-active a {
 }
 
 .inputSearch {
-    margin: 10px auto;
     padding-right: 3em;
 }
 
@@ -1345,8 +1344,7 @@ li.nav-link-is-active a {
 
 #msform {
     width: 400px;
-    /* margin: 50px auto; */
-    margin: 10px auto;
+    margin: 50px auto;
     text-align: center;
     position: relative;
 }
@@ -1507,70 +1505,3 @@ section {
 
 
 /* This container class will allow a table to scroll horizontally on smaller screens. */
-
-
-/* this is table style  */
-
-.tableFixHead {
-    overflow-y: auto;
-    height: 300px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-}
-
-.tableFixHead thead th {
-    position: sticky;
-    top: 0;
-}
-
-
-/* Just common table stuff. Really. */
-
-table {
-    /* border-collapse: collapse; */
-    width: 100%;
-}
-
-td,
-th {
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-th,
-td {
-    padding: 8px 16px;
-    text-align: center;
-    color: #000;
-}
-
-th {
-    background: #eee;
-}
-
-
-/* Borders (if you need them) */
-
-.tableFixHead {
-    /* border: 1px solid #000; */
-    border-left: 0;
-    border-right: 0;
-    margin: 10px auto;
-}
-
-.tableFixHead th,
-td {
-    /* border: 1px solid #000; */
-    border-top: 0;
-}
-
-.tableFixHead tbody tr:last-child td {
-    border-bottom: 0;
-}
-
-.tableFixHead thead th {
-    box-shadow: 1px 1px 0 #000;
-}

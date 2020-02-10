@@ -1,4 +1,5 @@
 var db_insert = require('../model/db_insert');
+var db_select = require('../model/db_select');
 
 exports.postData = ((req, res, next) => {
     var pic = req.body.pic;
@@ -26,3 +27,15 @@ exports.postData = ((req, res, next) => {
         }
     });
 });
+
+
+exports.getData = (req, res, next) => {
+    db_select.dbSelect(cb => {
+        res.render('admin-pages-data', {
+            pageTitle: "Data",
+            userName: req.username,
+            hover: true,
+            dokumen: cb
+        });
+    })
+}
