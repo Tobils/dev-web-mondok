@@ -1,0 +1,101 @@
+<%- include('./includes/admin-pages-header.ejs') %>
+
+    <!-- CONTAINER  -->
+    <div class="mainContent" style="overflow-x:auto;">
+        <!-- header  -->
+
+        <div class="table">
+            <div class="row bg-1">
+                <div class="cell cell-100 text-center text-fff">
+                    <h2>Detail Data</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <input class="inputSearch" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari laporan..." title="Type in a name">
+
+        <div class="tableFixHead">
+
+            <table id="myTable" width="100%" border="0" cellspacing="0" cellpadding="6">
+                <% if (dokumen.length > 0) { %>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>PIC</th>
+                            <th>No Odner</th>
+                            <th>Nama Dokumen</th>
+                            <th>No Dokumen</th>
+                            <th>Nama Laporan</th>
+                            <th>Halaman</th>
+                            <th>Tahun</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <% for(var i = 0; i < dokumen.length; i++) {%>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].pic %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].no_odner %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].nama_dokumen %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].no_dokumen %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].nama_laporan %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].halaman %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].tahun %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].keterangan %>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <% } %>
+                            <% } else { %>
+                                <div class="data_kosong">
+                                    <h2>Data Kosong</h2>
+                                </div>
+                                <% } %>
+            </table>
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toLowerCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[5];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+    </div>
+    </div>
+    <!-- END CONTAINER  -->
+
+
+    <%- include('./includes/admin-pages-footer.ejs') %>

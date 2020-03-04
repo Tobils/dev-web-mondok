@@ -1,0 +1,140 @@
+<%- include('./includes/admin-pages-header.ejs') %>
+
+    <!-- CONTAINER  -->
+    <div class="mainContent" style="overflow-x:auto;">
+        <!-- header  -->
+
+        <div class="table">
+            <div class="row bg-1">
+                <div class="cell cell-100 text-center text-fff">
+                    <h2>Detail Data</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <input class="inputSearch" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari laporan..." title="Type in a name">
+
+        <div class="tableFixHead">
+            <table id="myTable" width="100%" border="0" cellspacing="0" cellpadding="6">
+                <% if (dokumen.length > 0) { %>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>PIC</th>
+                            <th>No Odner</th>
+                            <th>Nama Dokumen</th>
+                            <th>No Dokumen</th>
+                            <th>Nama Laporan</th>
+                            <th>Halaman</th>
+                            <th>Tahun</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <% for(var i = 0; i < 10; i++) {%>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].pic %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].no_odner %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].nama_dokumen %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].no_dokumen %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].nama_laporan %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].halaman %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].tahun %>
+                                </td>
+                                <td>
+                                    <%= dokumen[i].keterangan %>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <% } %>
+                            <% } else { %>
+                                <div class="data_kosong">
+                                    <h2>Data Kosong</h2>
+                                </div>
+                                <% } %>
+            </table>
+        </div>
+
+
+        <!-- pagination page value  -->
+        <div class="pagination">
+            <button type="button">&laquo;</button>
+            <button type="button">2</button>
+            <button class="active" type="button">3</button>
+            <button type="button">4</button>
+            <button type="button">&raquo;</button>
+        </div>
+
+
+    </div>
+    <script>
+        // fungsi untuk serach 
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toLowerCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[5];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        // fungsi untuk pagination 
+        $(document).ready(function() {
+            $('#myTable').after('<div id="nav"></div>');
+            var rowsShown = 10;
+            var rowsTotal = $('#myTable tbody tr').length;
+            var numPages = rowsTotal / rowsShown;
+            for (i = 0; i < numPages; i++) {
+                var pageNum = i + 1;
+                $('#nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
+            }
+            $('#myTable tbody tr').hide();
+            $('#myTable tbody tr').slice(0, rowsShown).show();
+            $('#myTable a:first').addClass('active');
+            $('#myTable a').bind('click', function() {
+
+                $('#nav a').removeClass('active');
+                $(this).addClass('active');
+                var currPage = $(this).attr('rel');
+                var startItem = currPage * rowsShown;
+                var endItem = startItem + rowsShown;
+                $('#myTable tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                css('display', 'table-row').animate({
+                    opacity: 1
+                }, 300);
+            });
+        });
+    </script>
+    </div>
+    </div>
+    <!-- END CONTAINER  -->
+
+
+    <%- include('./includes/admin-pages-footer.ejs') %>

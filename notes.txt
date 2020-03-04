@@ -1,0 +1,18 @@
+1. v1--noe version
+    - sistem login belum aman dan UI masih belm rapih
+
+
+2. v2--nest version
+    - improve performance fitur
+        - user : 
+            - auth
+            - login
+            - lupa password 
+        - data mondok :
+            - auth
+            - edit data dalam table
+            - tambah data
+            - tambah data menggunakan file
+            - upload file
+        - database
+            - typeorm
